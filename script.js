@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-  // LOADER
   var loaderText = "FORPROFI";
   var loaderLogo = document.getElementById("loaderLogo");
   
@@ -13,14 +12,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  window.addEventListener("load", function() {
-    setTimeout(function() {
-      var loader = document.getElementById("loader");
-      if (loader) loader.classList.add("hidden");
-    }, 1800);
-  });
+  setTimeout(function() {
+    var loader = document.getElementById("loader");
+    if (loader) loader.classList.add("hidden");
+  }, 2000);
 
-  // NAVBAR SCROLL
   var navbar = document.getElementById("navbar");
 
   window.addEventListener("scroll", function() {
@@ -32,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // HAMBURGER
   var hamburger = document.getElementById("hamburger");
   var mobileNav = document.getElementById("mobileNav");
 
@@ -53,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // SMOOTH SCROLL
   var anchors = document.querySelectorAll("a[href^='#']");
   for (var k = 0; k < anchors.length; k++) {
     anchors[k].addEventListener("click", function(e) {
@@ -66,9 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // SCROLL REVEAL
   var revealEls = document.querySelectorAll(".reveal");
-
   var revealObs = new IntersectionObserver(function(entries) {
     for (var m = 0; m < entries.length; m++) {
       if (entries[m].isIntersecting) {
@@ -81,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function() {
     revealObs.observe(revealEls[n]);
   }
 
-  // ACTIVE NAV LINK
   var navSections = document.querySelectorAll("[data-nav-section]");
   var navLinks = document.querySelectorAll(".nav-link:not(.nav-cta)");
 
